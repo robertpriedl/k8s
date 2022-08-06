@@ -32,4 +32,8 @@ echo "to join cluster: kubeadm join 10.1.149.140:6443 --token yx8nnx.sf7ep8657f3
         --discovery-token-ca-cert-hash sha256:8185d65970297cce220dc35f549d6343ad12a385f2b71b925bf21dae24916921"
 echo "change ip, token and discoverytoken from initial install"
 
+echo "-- export to admin.conf"
 export KUBECONFIG=/etc/kubernetes/admin.conf
+
+echo "-- then add a network: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
+
