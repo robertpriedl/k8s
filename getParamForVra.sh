@@ -1,4 +1,6 @@
 # QUick and dirty config for k8s and vra - dont use it in production!
+# perhaps this helps:https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
 
 # certificate for vRA is under /etc/kubernetes/admin.conf under: certificate-authority-data:
 
