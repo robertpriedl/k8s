@@ -23,6 +23,10 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl -y
 sudo apt-mark hold kubelet kubeadm kubectl
 
+# from stackoverflow: https://stackoverflow.com/questions/52119985/kubeadm-init-shows-kubelet-isnt-running-or-healthy
+sudo swapoff -a
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
+
 kubeadm init --pod-network-cidr=10.244.0.0/16
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
