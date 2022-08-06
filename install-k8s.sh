@@ -23,3 +23,6 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl -y
 sudo apt-mark hold kubelet kubeadm kubectl
+
+sudo swapoff -a
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
