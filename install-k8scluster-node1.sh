@@ -1,4 +1,4 @@
-sudo apt install docker.io --assume-yes
+sudo apt install docker.io -y
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
