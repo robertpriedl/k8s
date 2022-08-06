@@ -26,3 +26,10 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo swapoff -a
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
+
+echo "to install cluster: kubeadm init --pod-network-cidr=10.244.0.0/16"
+echo "to join cluster: kubeadm join 10.1.149.140:6443 --token yx8nnx.sf7ep8657f3j5j6r \
+        --discovery-token-ca-cert-hash sha256:8185d65970297cce220dc35f549d6343ad12a385f2b71b925bf21dae24916921"
+echo "change ip, token and discoverytoken from initial install"
+
+export KUBECONFIG=/etc/kubernetes/admin.conf
