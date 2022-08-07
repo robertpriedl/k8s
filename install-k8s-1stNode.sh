@@ -3,6 +3,12 @@
 kubeadm init --pod-network-cidr=10.244.0.0/16
 # export config 
 export KUBECONFIG=/etc/kubernetes/admin.conf
+
+# copy config to home
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+
 # add network to cluster
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
